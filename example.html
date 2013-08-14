@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="date.range.css" type="text/css">
+</head>
+<body>
+<form action="" id="datePicker">
+    <input id="form_datetime" type="text" readonly>
+</form>
+
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="date.range.js"></script>
+<script>
+	new pickerDateRange('form_datetime', {
+        startDate: '2013-01-01',
+        endDate: '2013-08-01',
+        // needCompare: false,
+        startDateId: "start_date",
+        endDateId: "end_date",
+        target: 'datePicker',
+        isTodayValid: true,
+        // isSingleDay: false,
+        success: function (obj) {
+            console.log(obj);
+            $("#datePicker").submit();
+        }
+    });
+</script>
+</body>
+</html>
